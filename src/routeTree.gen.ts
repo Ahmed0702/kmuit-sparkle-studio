@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PartnerRouteImport } from './routes/partner'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as JobsRouteImport } from './routes/jobs'
+import { Route as ItServicesRouteImport } from './routes/it-services'
+import { Route as BranchenloesungRouteImport } from './routes/branchenloesung'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnerRoute = PartnerRouteImport.update({
+  id: '/partner',
+  path: '/partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JobsRoute = JobsRouteImport.update({
+  id: '/jobs',
+  path: '/jobs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItServicesRoute = ItServicesRouteImport.update({
+  id: '/it-services',
+  path: '/it-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BranchenloesungRoute = BranchenloesungRouteImport.update({
+  id: '/branchenloesung',
+  path: '/branchenloesung',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/branchenloesung': typeof BranchenloesungRoute
+  '/it-services': typeof ItServicesRoute
+  '/jobs': typeof JobsRoute
+  '/kontakt': typeof KontaktRoute
+  '/partner': typeof PartnerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/branchenloesung': typeof BranchenloesungRoute
+  '/it-services': typeof ItServicesRoute
+  '/jobs': typeof JobsRoute
+  '/kontakt': typeof KontaktRoute
+  '/partner': typeof PartnerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/branchenloesung': typeof BranchenloesungRoute
+  '/it-services': typeof ItServicesRoute
+  '/jobs': typeof JobsRoute
+  '/kontakt': typeof KontaktRoute
+  '/partner': typeof PartnerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/branchenloesung'
+    | '/it-services'
+    | '/jobs'
+    | '/kontakt'
+    | '/partner'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/branchenloesung'
+    | '/it-services'
+    | '/jobs'
+    | '/kontakt'
+    | '/partner'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/branchenloesung'
+    | '/it-services'
+    | '/jobs'
+    | '/kontakt'
+    | '/partner'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BranchenloesungRoute: typeof BranchenloesungRoute
+  ItServicesRoute: typeof ItServicesRoute
+  JobsRoute: typeof JobsRoute
+  KontaktRoute: typeof KontaktRoute
+  PartnerRoute: typeof PartnerRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partner': {
+      id: '/partner'
+      path: '/partner'
+      fullPath: '/partner'
+      preLoaderRoute: typeof PartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jobs': {
+      id: '/jobs'
+      path: '/jobs'
+      fullPath: '/jobs'
+      preLoaderRoute: typeof JobsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/it-services': {
+      id: '/it-services'
+      path: '/it-services'
+      fullPath: '/it-services'
+      preLoaderRoute: typeof ItServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branchenloesung': {
+      id: '/branchenloesung'
+      path: '/branchenloesung'
+      fullPath: '/branchenloesung'
+      preLoaderRoute: typeof BranchenloesungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BranchenloesungRoute: BranchenloesungRoute,
+  ItServicesRoute: ItServicesRoute,
+  JobsRoute: JobsRoute,
+  KontaktRoute: KontaktRoute,
+  PartnerRoute: PartnerRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
