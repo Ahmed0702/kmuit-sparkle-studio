@@ -146,10 +146,24 @@
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
+@keyframes ticker {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+@keyframes scan-line {
+  0% { transform: translateY(-10%); }
+  100% { transform: translateY(110%); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--r)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(var(--r)) rotate(-360deg); }
+}
 
 @utility animate-marquee { animation: marquee 30s linear infinite; }
 @utility animate-float { animation: float 6s ease-in-out infinite; }
 @utility animate-grid-pulse { animation: grid-pulse 4s ease-in-out infinite; }
+@utility animate-ticker { animation: ticker 2s ease-in-out infinite; }
+@utility animate-scan { animation: scan-line 3.5s linear infinite; }
 
 @utility grid-bg {
   background-image:
@@ -158,7 +172,13 @@
   background-size: 48px 48px;
 }
 
+@utility dot-bg {
+  background-image: radial-gradient(color-mix(in oklch, var(--brand) 30%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
 @utility hover-lift {
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s;
 }
 .hover-lift:hover { transform: translateY(-6px); box-shadow: var(--shadow-elegant); }
+
