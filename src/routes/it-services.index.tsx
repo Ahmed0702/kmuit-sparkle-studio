@@ -4,7 +4,7 @@ import {
 } from "lucide-react";
 import cloudImg from "@/assets/cloud-network.jpg";
 
-export const Route = createFileRoute("/it-services")({
+export const Route = createFileRoute("/it-services/")({
   head: () => ({
     meta: [
       { title: "IT-Services — KMU Informatik Support | Cloud, Cybersecurity, Managed Services" },
