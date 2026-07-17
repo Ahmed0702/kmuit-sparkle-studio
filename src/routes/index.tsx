@@ -498,7 +498,7 @@ function TestimonialsSection() {
                 ))}
               </div>
 
-              <p className="text-xl md:text-2xl text-white leading-relaxed font-display font-medium">
+              <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed font-display font-medium">
                 "{t.text}"
               </p>
 
