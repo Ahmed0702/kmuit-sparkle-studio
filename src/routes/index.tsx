@@ -687,7 +687,7 @@ function HomePage() {
         <AudienceCards />
       </section>
 
-      <div className="h-24" />
+      <div className="hidden md:block h-24" />
 
       {/* MISSION */}
       <section className="py-24">
