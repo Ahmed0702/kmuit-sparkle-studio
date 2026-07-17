@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as JobsRouteImport } from './routes/jobs'
+import { Route as ItServicesRouteImport } from './routes/it-services'
 import { Route as BranchenloesungRouteImport } from './routes/branchenloesung'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ItServicesIndexRouteImport } from './routes/it-services.index'
@@ -37,6 +38,11 @@ const JobsRoute = JobsRouteImport.update({
   path: '/jobs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ItServicesRoute = ItServicesRouteImport.update({
+  id: '/it-services',
+  path: '/it-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BranchenloesungRoute = BranchenloesungRouteImport.update({
   id: '/branchenloesung',
   path: '/branchenloesung',
@@ -48,14 +54,15 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ItServicesIndexRoute = ItServicesIndexRouteImport.update({
-  id: '/it-services/',
-  path: '/it-services/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => ItServicesRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/branchenloesung': typeof BranchenloesungRoute
+  '/it-services': typeof ItServicesRouteWithChildren
   '/jobs': typeof JobsRoute
   '/kontakt': typeof KontaktRoute
   '/partner': typeof PartnerRoute
@@ -75,6 +82,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/branchenloesung': typeof BranchenloesungRoute
+  '/it-services': typeof ItServicesRouteWithChildren
   '/jobs': typeof JobsRoute
   '/kontakt': typeof KontaktRoute
   '/partner': typeof PartnerRoute
@@ -86,6 +94,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/branchenloesung'
+    | '/it-services'
     | '/jobs'
     | '/kontakt'
     | '/partner'
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/branchenloesung'
+    | '/it-services'
     | '/jobs'
     | '/kontakt'
     | '/partner'
@@ -114,11 +124,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BranchenloesungRoute: typeof BranchenloesungRoute
+  ItServicesRoute: typeof ItServicesRouteWithChildren
   JobsRoute: typeof JobsRoute
   KontaktRoute: typeof KontaktRoute
   PartnerRoute: typeof PartnerRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  ItServicesIndexRoute: typeof ItServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -151,6 +161,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JobsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/it-services': {
+      id: '/it-services'
+      path: '/it-services'
+      fullPath: '/it-services'
+      preLoaderRoute: typeof ItServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/branchenloesung': {
       id: '/branchenloesung'
       path: '/branchenloesung'
@@ -167,22 +184,34 @@ declare module '@tanstack/react-router' {
     }
     '/it-services/': {
       id: '/it-services/'
-      path: '/it-services'
+      path: '/'
       fullPath: '/it-services/'
       preLoaderRoute: typeof ItServicesIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ItServicesRoute
     }
   }
 }
 
+interface ItServicesRouteChildren {
+  ItServicesIndexRoute: typeof ItServicesIndexRoute
+}
+
+const ItServicesRouteChildren: ItServicesRouteChildren = {
+  ItServicesIndexRoute: ItServicesIndexRoute,
+}
+
+const ItServicesRouteWithChildren = ItServicesRoute._addFileChildren(
+  ItServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BranchenloesungRoute: BranchenloesungRoute,
+  ItServicesRoute: ItServicesRouteWithChildren,
   JobsRoute: JobsRoute,
   KontaktRoute: KontaktRoute,
   PartnerRoute: PartnerRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  ItServicesIndexRoute: ItServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
