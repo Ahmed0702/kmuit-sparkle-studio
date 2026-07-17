@@ -646,7 +646,7 @@ function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent" />
 
-        <div className="container-x relative pt-24 pb-32 lg:pt-32 lg:pb-40">
+        <div className="container-x relative pt-16 pb-16 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6 animate-fade-in">
               <Sparkles className="w-3.5 h-3.5 text-brand-glow" />
