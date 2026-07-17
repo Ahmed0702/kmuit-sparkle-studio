@@ -16,6 +16,13 @@ import { Route as JobsRouteImport } from './routes/jobs'
 import { Route as ItServicesRouteImport } from './routes/it-services'
 import { Route as BranchenloesungRouteImport } from './routes/branchenloesung'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ItServicesIndexRouteImport } from './routes/it-services.index'
+import { Route as ItServicesItUmzugRouteImport } from './routes/it-services.it-umzug'
+import { Route as ItServicesItRollOutRouteImport } from './routes/it-services.it-roll-out'
+import { Route as ItServicesInfrastrukturAnalyseRouteImport } from './routes/it-services.infrastruktur-analyse'
+import { Route as ItServicesDigitalisierungsStrategieRouteImport } from './routes/it-services.digitalisierungs-strategie'
+import { Route as ItServicesCyberSecurityRouteImport } from './routes/it-services.cyber-security'
+import { Route as ItServicesBusinessProcessAutomationRouteImport } from './routes/it-services.business-process-automation'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -52,34 +59,92 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ItServicesIndexRoute = ItServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ItServicesRoute,
+} as any)
+const ItServicesItUmzugRoute = ItServicesItUmzugRouteImport.update({
+  id: '/it-umzug',
+  path: '/it-umzug',
+  getParentRoute: () => ItServicesRoute,
+} as any)
+const ItServicesItRollOutRoute = ItServicesItRollOutRouteImport.update({
+  id: '/it-roll-out',
+  path: '/it-roll-out',
+  getParentRoute: () => ItServicesRoute,
+} as any)
+const ItServicesInfrastrukturAnalyseRoute =
+  ItServicesInfrastrukturAnalyseRouteImport.update({
+    id: '/infrastruktur-analyse',
+    path: '/infrastruktur-analyse',
+    getParentRoute: () => ItServicesRoute,
+  } as any)
+const ItServicesDigitalisierungsStrategieRoute =
+  ItServicesDigitalisierungsStrategieRouteImport.update({
+    id: '/digitalisierungs-strategie',
+    path: '/digitalisierungs-strategie',
+    getParentRoute: () => ItServicesRoute,
+  } as any)
+const ItServicesCyberSecurityRoute = ItServicesCyberSecurityRouteImport.update({
+  id: '/cyber-security',
+  path: '/cyber-security',
+  getParentRoute: () => ItServicesRoute,
+} as any)
+const ItServicesBusinessProcessAutomationRoute =
+  ItServicesBusinessProcessAutomationRouteImport.update({
+    id: '/business-process-automation',
+    path: '/business-process-automation',
+    getParentRoute: () => ItServicesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/branchenloesung': typeof BranchenloesungRoute
-  '/it-services': typeof ItServicesRoute
+  '/it-services': typeof ItServicesRouteWithChildren
   '/jobs': typeof JobsRoute
   '/kontakt': typeof KontaktRoute
   '/partner': typeof PartnerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/it-services/business-process-automation': typeof ItServicesBusinessProcessAutomationRoute
+  '/it-services/cyber-security': typeof ItServicesCyberSecurityRoute
+  '/it-services/digitalisierungs-strategie': typeof ItServicesDigitalisierungsStrategieRoute
+  '/it-services/infrastruktur-analyse': typeof ItServicesInfrastrukturAnalyseRoute
+  '/it-services/it-roll-out': typeof ItServicesItRollOutRoute
+  '/it-services/it-umzug': typeof ItServicesItUmzugRoute
+  '/it-services/': typeof ItServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/branchenloesung': typeof BranchenloesungRoute
-  '/it-services': typeof ItServicesRoute
   '/jobs': typeof JobsRoute
   '/kontakt': typeof KontaktRoute
   '/partner': typeof PartnerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/it-services/business-process-automation': typeof ItServicesBusinessProcessAutomationRoute
+  '/it-services/cyber-security': typeof ItServicesCyberSecurityRoute
+  '/it-services/digitalisierungs-strategie': typeof ItServicesDigitalisierungsStrategieRoute
+  '/it-services/infrastruktur-analyse': typeof ItServicesInfrastrukturAnalyseRoute
+  '/it-services/it-roll-out': typeof ItServicesItRollOutRoute
+  '/it-services/it-umzug': typeof ItServicesItUmzugRoute
+  '/it-services': typeof ItServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/branchenloesung': typeof BranchenloesungRoute
-  '/it-services': typeof ItServicesRoute
+  '/it-services': typeof ItServicesRouteWithChildren
   '/jobs': typeof JobsRoute
   '/kontakt': typeof KontaktRoute
   '/partner': typeof PartnerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/it-services/business-process-automation': typeof ItServicesBusinessProcessAutomationRoute
+  '/it-services/cyber-security': typeof ItServicesCyberSecurityRoute
+  '/it-services/digitalisierungs-strategie': typeof ItServicesDigitalisierungsStrategieRoute
+  '/it-services/infrastruktur-analyse': typeof ItServicesInfrastrukturAnalyseRoute
+  '/it-services/it-roll-out': typeof ItServicesItRollOutRoute
+  '/it-services/it-umzug': typeof ItServicesItUmzugRoute
+  '/it-services/': typeof ItServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,15 +156,28 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/partner'
     | '/sitemap.xml'
+    | '/it-services/business-process-automation'
+    | '/it-services/cyber-security'
+    | '/it-services/digitalisierungs-strategie'
+    | '/it-services/infrastruktur-analyse'
+    | '/it-services/it-roll-out'
+    | '/it-services/it-umzug'
+    | '/it-services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/branchenloesung'
-    | '/it-services'
     | '/jobs'
     | '/kontakt'
     | '/partner'
     | '/sitemap.xml'
+    | '/it-services/business-process-automation'
+    | '/it-services/cyber-security'
+    | '/it-services/digitalisierungs-strategie'
+    | '/it-services/infrastruktur-analyse'
+    | '/it-services/it-roll-out'
+    | '/it-services/it-umzug'
+    | '/it-services'
   id:
     | '__root__'
     | '/'
@@ -109,12 +187,19 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/partner'
     | '/sitemap.xml'
+    | '/it-services/business-process-automation'
+    | '/it-services/cyber-security'
+    | '/it-services/digitalisierungs-strategie'
+    | '/it-services/infrastruktur-analyse'
+    | '/it-services/it-roll-out'
+    | '/it-services/it-umzug'
+    | '/it-services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BranchenloesungRoute: typeof BranchenloesungRoute
-  ItServicesRoute: typeof ItServicesRoute
+  ItServicesRoute: typeof ItServicesRouteWithChildren
   JobsRoute: typeof JobsRoute
   KontaktRoute: typeof KontaktRoute
   PartnerRoute: typeof PartnerRoute
@@ -172,13 +257,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/it-services/': {
+      id: '/it-services/'
+      path: '/'
+      fullPath: '/it-services/'
+      preLoaderRoute: typeof ItServicesIndexRouteImport
+      parentRoute: typeof ItServicesRoute
+    }
+    '/it-services/it-umzug': {
+      id: '/it-services/it-umzug'
+      path: '/it-umzug'
+      fullPath: '/it-services/it-umzug'
+      preLoaderRoute: typeof ItServicesItUmzugRouteImport
+      parentRoute: typeof ItServicesRoute
+    }
+    '/it-services/it-roll-out': {
+      id: '/it-services/it-roll-out'
+      path: '/it-roll-out'
+      fullPath: '/it-services/it-roll-out'
+      preLoaderRoute: typeof ItServicesItRollOutRouteImport
+      parentRoute: typeof ItServicesRoute
+    }
+    '/it-services/infrastruktur-analyse': {
+      id: '/it-services/infrastruktur-analyse'
+      path: '/infrastruktur-analyse'
+      fullPath: '/it-services/infrastruktur-analyse'
+      preLoaderRoute: typeof ItServicesInfrastrukturAnalyseRouteImport
+      parentRoute: typeof ItServicesRoute
+    }
+    '/it-services/digitalisierungs-strategie': {
+      id: '/it-services/digitalisierungs-strategie'
+      path: '/digitalisierungs-strategie'
+      fullPath: '/it-services/digitalisierungs-strategie'
+      preLoaderRoute: typeof ItServicesDigitalisierungsStrategieRouteImport
+      parentRoute: typeof ItServicesRoute
+    }
+    '/it-services/cyber-security': {
+      id: '/it-services/cyber-security'
+      path: '/cyber-security'
+      fullPath: '/it-services/cyber-security'
+      preLoaderRoute: typeof ItServicesCyberSecurityRouteImport
+      parentRoute: typeof ItServicesRoute
+    }
+    '/it-services/business-process-automation': {
+      id: '/it-services/business-process-automation'
+      path: '/business-process-automation'
+      fullPath: '/it-services/business-process-automation'
+      preLoaderRoute: typeof ItServicesBusinessProcessAutomationRouteImport
+      parentRoute: typeof ItServicesRoute
+    }
   }
 }
+
+interface ItServicesRouteChildren {
+  ItServicesBusinessProcessAutomationRoute: typeof ItServicesBusinessProcessAutomationRoute
+  ItServicesCyberSecurityRoute: typeof ItServicesCyberSecurityRoute
+  ItServicesDigitalisierungsStrategieRoute: typeof ItServicesDigitalisierungsStrategieRoute
+  ItServicesInfrastrukturAnalyseRoute: typeof ItServicesInfrastrukturAnalyseRoute
+  ItServicesItRollOutRoute: typeof ItServicesItRollOutRoute
+  ItServicesItUmzugRoute: typeof ItServicesItUmzugRoute
+  ItServicesIndexRoute: typeof ItServicesIndexRoute
+}
+
+const ItServicesRouteChildren: ItServicesRouteChildren = {
+  ItServicesBusinessProcessAutomationRoute:
+    ItServicesBusinessProcessAutomationRoute,
+  ItServicesCyberSecurityRoute: ItServicesCyberSecurityRoute,
+  ItServicesDigitalisierungsStrategieRoute:
+    ItServicesDigitalisierungsStrategieRoute,
+  ItServicesInfrastrukturAnalyseRoute: ItServicesInfrastrukturAnalyseRoute,
+  ItServicesItRollOutRoute: ItServicesItRollOutRoute,
+  ItServicesItUmzugRoute: ItServicesItUmzugRoute,
+  ItServicesIndexRoute: ItServicesIndexRoute,
+}
+
+const ItServicesRouteWithChildren = ItServicesRoute._addFileChildren(
+  ItServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BranchenloesungRoute: BranchenloesungRoute,
-  ItServicesRoute: ItServicesRoute,
+  ItServicesRoute: ItServicesRouteWithChildren,
   JobsRoute: JobsRoute,
   KontaktRoute: KontaktRoute,
   PartnerRoute: PartnerRoute,
@@ -187,13 +347,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
