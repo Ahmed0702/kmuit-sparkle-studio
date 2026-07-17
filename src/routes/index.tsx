@@ -652,7 +652,7 @@ function HomePage() {
               <Sparkles className="w-3.5 h-3.5 text-brand-glow" />
               Ihr IT-Zukunftspartner seit 1989
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight animate-fade-in">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.02] md:leading-[0.95] tracking-tight animate-fade-in">
               KMU Informatik <br />
               Support:{" "}
               <span className="text-gradient-brand">Wir bieten Lösungen.</span>
