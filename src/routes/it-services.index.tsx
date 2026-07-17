@@ -72,8 +72,8 @@ function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/kontakt" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:gap-3 transition-all">
-                  Angebot anfragen <ArrowRight className="w-4 h-4" />
+                <Link to={s.to} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:gap-3 transition-all">
+                  Mehr erfahren <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             ))}
