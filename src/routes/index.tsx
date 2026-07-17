@@ -229,7 +229,7 @@ function ProjectsShowcase() {
           <div key={active} className="lg:col-span-8 relative rounded-3xl overflow-hidden border border-border bg-background animate-fade-in">
             <div className={`absolute inset-0 bg-gradient-to-br ${p.color} opacity-70`} />
             <div className="absolute inset-0 grid-bg opacity-30" />
-            <div className="relative p-8 md:p-12 min-h-[420px] flex flex-col">
+            <div className="relative p-6 sm:p-8 md:p-12 min-h-[420px] flex flex-col">
               <div className="flex items-start justify-between gap-6 flex-wrap">
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest text-brand">
