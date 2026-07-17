@@ -175,7 +175,7 @@ function ProjectsShowcase() {
   const p = projects[active];
 
   return (
-    <section className="py-24 bg-muted/40 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-muted/40 relative overflow-hidden">
       <div className="absolute inset-0 dot-bg opacity-40" />
       <div className="container-x relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
@@ -183,7 +183,7 @@ function ProjectsShowcase() {
             <div className="inline-flex items-center gap-2 text-brand font-bold text-xs uppercase tracking-widest">
               <span className="w-8 h-px bg-brand" /> Aktuelle Projekte
             </div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-black leading-tight max-w-2xl">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-2xl">
               Vertrauen von <span className="text-gradient-brand">Marktführern</span>.
             </h2>
           </div>
@@ -229,7 +229,7 @@ function ProjectsShowcase() {
           <div key={active} className="lg:col-span-8 relative rounded-3xl overflow-hidden border border-border bg-background animate-fade-in">
             <div className={`absolute inset-0 bg-gradient-to-br ${p.color} opacity-70`} />
             <div className="absolute inset-0 grid-bg opacity-30" />
-            <div className="relative p-8 md:p-12 min-h-[420px] flex flex-col">
+            <div className="relative p-6 sm:p-8 md:p-12 min-h-[420px] flex flex-col">
               <div className="flex items-start justify-between gap-6 flex-wrap">
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest text-brand">
@@ -293,15 +293,15 @@ function CyberSecuritySection() {
   ];
 
   return (
-    <section ref={ref} className="py-24 relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 dot-bg opacity-30" />
-      <div className="container-x relative grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container-x relative grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* LEFT: content */}
         <div>
           <div className="inline-flex items-center gap-2 bg-brand/10 text-brand rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest">
             <Lock className="w-3.5 h-3.5" /> Cyber Security
           </div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-black leading-tight">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
             Schützen Sie was <span className="text-gradient-brand">wirklich zählt.</span>
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
@@ -435,7 +435,7 @@ function TestimonialsSection() {
   const t = testimonials[idx];
 
   return (
-    <section className="py-24 bg-ink text-ink-foreground relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-ink text-ink-foreground relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-brand/20 blur-3xl" />
       <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-brand/20 blur-3xl" />
@@ -447,7 +447,7 @@ function TestimonialsSection() {
             <div className="inline-flex items-center gap-2 text-brand-glow font-bold text-xs uppercase tracking-widest">
               <span className="w-8 h-px bg-brand-glow" /> Kundenfeedbacks
             </div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-black leading-tight">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
               Was unsere <br />
               <span className="text-gradient-brand">Kunden sagen.</span>
             </h2>
@@ -489,8 +489,8 @@ function TestimonialsSection() {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            <div key={idx} className="relative bg-white/[0.04] border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur animate-fade-in">
-              <Quote className="absolute top-8 right-8 w-16 h-16 text-brand/20" />
+            <div key={idx} className="relative bg-white/[0.04] border border-white/10 rounded-3xl p-6 sm:p-8 md:p-12 backdrop-blur animate-fade-in">
+              <Quote className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 md:w-16 md:h-16 text-brand/20" />
 
               <div className="flex gap-1 mb-6">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -498,7 +498,7 @@ function TestimonialsSection() {
                 ))}
               </div>
 
-              <p className="text-xl md:text-2xl text-white leading-relaxed font-display font-medium">
+              <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed font-display font-medium">
                 "{t.text}"
               </p>
 
@@ -570,8 +570,8 @@ function TestimonialsSection() {
 /* -------------------- SECTION 4: HERO AUDIENCE CARDS -------------------- */
 function AudienceCards() {
   return (
-    <div className="container-x relative -mb-24 pb-8">
-      <div className="grid md:grid-cols-3 gap-4">
+    <div className="container-x relative pb-8 md:-mb-24">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         {audiences.map((a, i) => (
           <div
             key={a.label}
@@ -646,18 +646,18 @@ function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent" />
 
-        <div className="container-x relative pt-24 pb-32 lg:pt-32 lg:pb-40">
+        <div className="container-x relative pt-16 pb-16 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6 animate-fade-in">
               <Sparkles className="w-3.5 h-3.5 text-brand-glow" />
               Ihr IT-Zukunftspartner seit 1989
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight animate-fade-in">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.02] md:leading-[0.95] tracking-tight animate-fade-in">
               KMU Informatik <br />
               Support:{" "}
               <span className="text-gradient-brand">Wir bieten Lösungen.</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
               Mit der passenden Cloud-Lösung und IT-Infrastruktur bleiben Unternehmen wettbewerbsfähig
               und innovativ. Beratung, Implementierung und 24/7 Support aus einer Hand.
             </p>
@@ -687,7 +687,7 @@ function HomePage() {
         <AudienceCards />
       </section>
 
-      <div className="h-24" />
+      <div className="hidden md:block h-24" />
 
       {/* MISSION */}
       <section className="py-24">
