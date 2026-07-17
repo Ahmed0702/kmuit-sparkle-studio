@@ -17,13 +17,13 @@ export const Route = createFileRoute("/it-services/")({
 });
 
 const bigServices = [
-  { icon: Zap, title: "Business Process Automation", desc: "Verwandeln Sie Ihre Geschäftsabläufe mit effizienter Automation und steigern Sie die Produktivität Ihres Unternehmens.", features: ["Workflow Automation", "RPA & KI Integration", "ERP Anbindung", "Reporting & KPIs"] },
-  { icon: Shield, title: "IT Cyber Security", desc: "Umfassender Schutz Ihrer Systeme gegen aktuelle Bedrohungen — Endpoint, Netzwerk, Cloud und Awareness.", features: ["Endpoint Protection", "Firewall & VPN", "Backup & DR", "Awareness Trainings"] },
-  { icon: Cpu, title: "Infrastruktur-Analyse", desc: "Wir schaffen Übersicht in gewachsener IT und dokumentieren Ihre Systeme lückenlos für zukünftige Entscheidungen.", features: ["Bestandsaufnahme", "Dokumentation", "Schwachstellen-Analyse", "Handlungsempfehlungen"] },
-  { icon: Rocket, title: "Digitalisierungs-Strategie", desc: "Gemeinsam definieren wir Ihre digitale Roadmap für nachhaltiges Wachstum und Wettbewerbsfähigkeit.", features: ["Ist/Soll Analyse", "Roadmap Definition", "Change Management", "Umsetzungsbegleitung"] },
-  { icon: Wrench, title: "IT-Roll-out", desc: "Hardware-Beschaffung, Installation und Rollout durch qualifiziertes Personal, ausreichend Arbeitskräfte und Logistik.", features: ["Hardware Beschaffung", "Vor-Ort Installation", "User Enrollment", "Alt-Geräte Entsorgung"] },
-  { icon: Cloud, title: "IT-Umzug", desc: "Sicherer Ab- und Aufbau Ihrer IT-Systeme bei Standortwechseln — für Büros und Privatkunden.", features: ["Planung & Koordination", "Server Verlagerung", "Netzwerk Neuaufbau", "Downtime Minimierung"] },
-];
+  { to: "/it-services/business-process-automation", icon: Zap, title: "Business Process Automation", desc: "Verwandeln Sie Ihre Geschäftsabläufe mit effizienter Automation und steigern Sie die Produktivität Ihres Unternehmens.", features: ["Workflow Automation", "RPA & KI Integration", "ERP Anbindung", "Reporting & KPIs"] },
+  { to: "/it-services/cyber-security", icon: Shield, title: "IT Cyber Security", desc: "Umfassender Schutz Ihrer Systeme gegen aktuelle Bedrohungen — Endpoint, Netzwerk, Cloud und Awareness.", features: ["Endpoint Protection", "Firewall & VPN", "Backup & DR", "Awareness Trainings"] },
+  { to: "/it-services/infrastruktur-analyse", icon: Cpu, title: "Infrastruktur-Analyse", desc: "Wir schaffen Übersicht in gewachsener IT und dokumentieren Ihre Systeme lückenlos für zukünftige Entscheidungen.", features: ["Bestandsaufnahme", "Dokumentation", "Schwachstellen-Analyse", "Handlungsempfehlungen"] },
+  { to: "/it-services/digitalisierungs-strategie", icon: Rocket, title: "Digitalisierungs-Strategie", desc: "Gemeinsam definieren wir Ihre digitale Roadmap für nachhaltiges Wachstum und Wettbewerbsfähigkeit.", features: ["Ist/Soll Analyse", "Roadmap Definition", "Change Management", "Umsetzungsbegleitung"] },
+  { to: "/it-services/it-roll-out", icon: Wrench, title: "IT-Roll-out", desc: "Hardware-Beschaffung, Installation und Rollout durch qualifiziertes Personal, ausreichend Arbeitskräfte und Logistik.", features: ["Hardware Beschaffung", "Vor-Ort Installation", "User Enrollment", "Alt-Geräte Entsorgung"] },
+  { to: "/it-services/it-umzug", icon: Cloud, title: "IT-Umzug", desc: "Sicherer Ab- und Aufbau Ihrer IT-Systeme bei Standortwechseln — für Büros und Privatkunden.", features: ["Planung & Koordination", "Server Verlagerung", "Netzwerk Neuaufbau", "Downtime Minimierung"] },
+] as const;
 
 const cloudFeatures = [
   { icon: Server, title: "Managed Servers", text: "Windows, Linux, Hyper-V & VMware — betreut rund um die Uhr." },
