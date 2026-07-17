@@ -183,7 +183,7 @@ function ProjectsShowcase() {
             <div className="inline-flex items-center gap-2 text-brand font-bold text-xs uppercase tracking-widest">
               <span className="w-8 h-px bg-brand" /> Aktuelle Projekte
             </div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-black leading-tight max-w-2xl">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-2xl">
               Vertrauen von <span className="text-gradient-brand">Marktführern</span>.
             </h2>
           </div>
