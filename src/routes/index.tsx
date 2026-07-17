@@ -293,9 +293,9 @@ function CyberSecuritySection() {
   ];
 
   return (
-    <section ref={ref} className="py-24 relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 dot-bg opacity-30" />
-      <div className="container-x relative grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container-x relative grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* LEFT: content */}
         <div>
           <div className="inline-flex items-center gap-2 bg-brand/10 text-brand rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest">
