@@ -175,7 +175,7 @@ function ProjectsShowcase() {
   const p = projects[active];
 
   return (
-    <section className="py-24 bg-muted/40 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-muted/40 relative overflow-hidden">
       <div className="absolute inset-0 dot-bg opacity-40" />
       <div className="container-x relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
