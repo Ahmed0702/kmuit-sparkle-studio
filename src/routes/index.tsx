@@ -301,7 +301,7 @@ function CyberSecuritySection() {
           <div className="inline-flex items-center gap-2 bg-brand/10 text-brand rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest">
             <Lock className="w-3.5 h-3.5" /> Cyber Security
           </div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-black leading-tight">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
             Schützen Sie was <span className="text-gradient-brand">wirklich zählt.</span>
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
