@@ -570,8 +570,8 @@ function TestimonialsSection() {
 /* -------------------- SECTION 4: HERO AUDIENCE CARDS -------------------- */
 function AudienceCards() {
   return (
-    <div className="container-x relative -mb-24 pb-8">
-      <div className="grid md:grid-cols-3 gap-4">
+    <div className="container-x relative pb-8 md:-mb-24">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         {audiences.map((a, i) => (
           <div
             key={a.label}
