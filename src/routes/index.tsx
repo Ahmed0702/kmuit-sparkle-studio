@@ -657,7 +657,7 @@ function HomePage() {
               Support:{" "}
               <span className="text-gradient-brand">Wir bieten Lösungen.</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
               Mit der passenden Cloud-Lösung und IT-Infrastruktur bleiben Unternehmen wettbewerbsfähig
               und innovativ. Beratung, Implementierung und 24/7 Support aus einer Hand.
             </p>
