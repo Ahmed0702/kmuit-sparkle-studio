@@ -489,8 +489,8 @@ function TestimonialsSection() {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            <div key={idx} className="relative bg-white/[0.04] border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur animate-fade-in">
-              <Quote className="absolute top-8 right-8 w-16 h-16 text-brand/20" />
+            <div key={idx} className="relative bg-white/[0.04] border border-white/10 rounded-3xl p-6 sm:p-8 md:p-12 backdrop-blur animate-fade-in">
+              <Quote className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 md:w-16 md:h-16 text-brand/20" />
 
               <div className="flex gap-1 mb-6">
                 {Array.from({ length: 5 }).map((_, i) => (
