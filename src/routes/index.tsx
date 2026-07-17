@@ -447,7 +447,7 @@ function TestimonialsSection() {
             <div className="inline-flex items-center gap-2 text-brand-glow font-bold text-xs uppercase tracking-widest">
               <span className="w-8 h-px bg-brand-glow" /> Kundenfeedbacks
             </div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-black leading-tight">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
               Was unsere <br />
               <span className="text-gradient-brand">Kunden sagen.</span>
             </h2>
