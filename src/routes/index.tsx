@@ -570,12 +570,12 @@ function TestimonialsSection() {
 /* -------------------- SECTION 4: HERO AUDIENCE CARDS -------------------- */
 function AudienceCards() {
   return (
-    <div className="container-x relative pb-8 md:-mb-24">
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <div className="container-x relative z-10 pb-10 md:pb-14">
+      <div className="grid items-stretch gap-4 sm:grid-cols-2 md:grid-cols-3">
         {audiences.map((a, i) => (
           <div
             key={a.label}
-            className="group relative bg-background text-foreground rounded-2xl p-7 border border-border overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-elegant hover:border-brand"
+            className="group relative flex min-w-0 flex-col bg-background text-foreground rounded-2xl p-6 sm:p-7 border border-border overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-elegant hover:border-brand"
             style={{ animationDelay: `${i * 100}ms` }}
           >
             {/* Corner gradient */}
@@ -585,7 +585,7 @@ function AudienceCards() {
               0{i + 1}
             </div>
 
-            <div className="relative">
+            <div className="relative flex h-full flex-col">
               <div className="w-12 h-12 rounded-xl bg-ink text-ink-foreground flex items-center justify-center mb-5 group-hover:bg-brand group-hover:rotate-6 transition-all duration-500">
                 <a.icon className="w-5 h-5" />
               </div>
@@ -605,7 +605,8 @@ function AudienceCards() {
                 ))}
               </div>
 
-              <div className="mt-6 pt-5 border-t border-border flex items-center justify-between">
+              <div className="mt-auto pt-6">
+                <div className="pt-5 border-t border-border flex items-center justify-between gap-3">
                 <Link
                   to="/it-services"
                   className="inline-flex items-center gap-1 text-sm font-bold text-foreground group-hover:text-brand transition-colors"
@@ -620,6 +621,7 @@ function AudienceCards() {
                 >
                   <Phone className="w-4 h-4" />
                 </a>
+                </div>
               </div>
             </div>
           </div>
@@ -686,8 +688,6 @@ function HomePage() {
 
         <AudienceCards />
       </section>
-
-      <div className="hidden md:block h-24" />
 
       {/* MISSION */}
       <section className="py-24">
