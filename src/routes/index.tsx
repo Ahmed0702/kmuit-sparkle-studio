@@ -435,7 +435,7 @@ function TestimonialsSection() {
   const t = testimonials[idx];
 
   return (
-    <section className="py-24 bg-ink text-ink-foreground relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-ink text-ink-foreground relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-brand/20 blur-3xl" />
       <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-brand/20 blur-3xl" />
